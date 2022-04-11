@@ -12,8 +12,7 @@
 
 ### 格式化代码
 
-> `prettier`
-> `settings`里面搜索`editor:default format`选择 `prettier - code formatter`
+> `prettier` > `settings`里面搜索`editor:default format`选择 `prettier - code formatter`
 > 勾上下面保存时候自动格式化
 
 ### JavaScript (ES6) snippets
@@ -37,7 +36,10 @@
 1. `Upload Key : Shift + Alt + U`
 2. `Download Key : Shift + Alt + D`
 
-### js注释插件
+### js 注释插件
+
 > `VS DocBlockr` 输入`/**` 即可生成注释
 
+### vue 3 Snippets
 
+> `vue2/vue3`都可以使用的一款插件
