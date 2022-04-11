@@ -4,13 +4,13 @@
 
 
 // import HelloWorld from './components/HelloWorld.vue'
-// import ts from './components/ts.vue'
-import vuea from './components/vuea.vue'
+import ts from './components/ts.vue'
+// import vuea from './components/vuea.vue'
 </script>
 
 <template>
   <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" mes="2" /> -->
-  <!-- <ts /> --> <vuea />
+  <ts />
 </template>
 
 <style>#app {
