@@ -172,11 +172,11 @@ console.log('===================')
 //
 //
 //
-//
+//类型接口
 interface Ibace<T> {
   data: Array<T>
   add: (t: T) => T
-  // getId: (id: number) => T
+  getId: (id: number) => any
 }
 
 class User {
@@ -194,26 +194,77 @@ class Usid implements Ibace<User> {
   add(user: User): User {
     user = { ...user, id: Date.now() + Math.floor(Math.random() * 999) }
     this.data.push(user)
-    console.log('保存user', user)
     return user
   }
   // 根据id筛选用户信息
-  // getId(id: number): User {
-  //   return this.data.find(user => user.id === id);
-  // }
-
+  getId(id: number | undefined) {
+    return this.data.find(item => item.id === id)
+  }
 
 }
-const usid = new Usid()
-// usid.getId(12)
+
+const usid: Usid = new Usid()
 usid.add(new User('小红', 12))
-
-// usid.getId(20)
 usid.add(new User('狗子', 20))
+const { id } = usid.add(new User('jack', 25))
+usid.add(new User('souse', 23))
+
+console.log(usid.data)
+console.log('获取user', usid.getId(id))
 
 
+// 泛型类
+
+class GetNumber<T> {
+  //默认属性值类型是泛型类型 
+  defaultValue: T
+  add: (x: T, y: T) => T
+
+}
+
+const g: GetNumber<number> = new GetNumber<number>()
+console.log(g);
+g.defaultValue = 100;
+g.add = (x, y) => {
+  return x * y
+}
+console.log(g.add(10, 100))
+
+
+
+
+// 内置对象
+/* 1. ECMAScript 的内置对象 */
+let b: Boolean = new Boolean(1)
+let n: Number = new Number(true)
+let s: String = new String('abc')
+let d: Date = new Date()
+let r: RegExp = /^1/
+let e: Error = new Error('error message')
+// b = true
+
+console.log(b)
+
+
+
+// BOM 和 DOM 的内置对象
+// Window
+// Document
+// HTMLElement
+// DocumentFragment
+// Event
+// NodeList
+
+const div: HTMLElement = document.getElementById('test')
+const divs: NodeList = document.querySelectorAll('div')
+document.addEventListener('click', (event: MouseEvent) => {
+  console.dir(event.target)
+})
+const fragment: DocumentFragment = document.createDocumentFragment()
+console.log(div)
 
 </script>
 <template>
-  <h1>测试ts</h1>
+  <h1>typescript 学习</h1>
+  <div id="test">详情见js TS部分</div>
 </template>
