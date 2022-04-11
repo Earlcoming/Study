@@ -1,7 +1,5 @@
 ## vscode 配置
 
-> id:8e7d4334b04bb81cadd9c1903647042e
-
 ### auto rename tag
 
 > 不需要安装此插件，可以达到同样的效果, `settings`搜索`Linked Editing`，勾上即可
