@@ -10,6 +10,7 @@
     </h2>
     <h2>职业： {{ form.value }}</h2>
     <h4>{{ form.sex }}</h4>
+    <h4>msg{{ msg }}</h4>
     <button @click="updateCount">按钮</button>
   </div>
 </template>
@@ -19,12 +20,24 @@ import { defineComponent, ref, reactive } from "vue";
 export default defineComponent({
   name: "HelloWorld",
   // setup执行时机，在beforeCreate之前执行(一次), 此时组件对象还没有创建
-  mounted() {
-    console.log("mouted", this);
+  props: {
+    msg: String,
   },
-  setup() {
+  mounted() {
+    // console.log("mouted", this);
+  },
+  /**
+   * [setup description]
+   *
+   * @param   {[type]}  props    [props description]
+   * @param   {[type]}  context  [context description]
+   *
+   * @return  {[type]}           [return description]
+   */
+  setup(props, context) {
+    console.log("值", props, context, props.msg);
+
     const count = ref(1);
-    console.log(this);
     // ref定义一个函数，作用：响应式数据(基本类型数据)
     const state = {
       name: "小明",
