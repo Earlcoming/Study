@@ -176,7 +176,7 @@ console.log('===================')
 interface Ibace<T> {
   data: Array<T>
   add: (t: T) => T
-  getId: (id: number) => T
+  // getId: (id: number) => T
 }
 
 class User {
@@ -198,16 +198,17 @@ class Usid implements Ibace<User> {
     return user
   }
   // 根据id筛选用户信息
-  getId(id: number): User {
-    return this.data.find(user => user.id === id);
-  }
+  // getId(id: number): User {
+  //   return this.data.find(user => user.id === id);
+  // }
+
 
 }
 const usid = new Usid()
-usid.getId(12)
+// usid.getId(12)
 usid.add(new User('小红', 12))
 
-usid.getId(20)
+// usid.getId(20)
 usid.add(new User('狗子', 20))
 
 
