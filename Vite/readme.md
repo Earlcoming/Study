@@ -1,3 +1,5 @@
 ## 安装
 
-
+```
+  npm init vite@latest
+```

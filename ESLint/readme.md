@@ -15,19 +15,19 @@
 `settions.json` 里面的代码
 
 ```json
-    "editor.formatOnSave": true, //自带保存格式化
-    // 保存触发eslint
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "eslint.validate": [
-        "html",
-        "vue",
-        "javascript",
-        "jsx",
-        "css",
-        "sass",
-        "less",
-        "typescript"
-    ],
+  "editor.formatOnSave": true, //自带保存格式化
+  // 保存触发eslint
+  "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+  },
+  "eslint.validate": [
+    "html",
+    "vue",
+    "javascript",
+    "jsx",
+    "css",
+    "sass",
+    "less",
+    "typescript"
+  ],
 ```
