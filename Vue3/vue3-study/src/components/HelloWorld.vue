@@ -18,8 +18,13 @@
 import { defineComponent, ref, reactive } from 'vue';
 export default defineComponent({
   name: 'HelloWorld',
+  // setup执行时机，在beforeCreate之前执行(一次), 此时组件对象还没有创建
+  mounted() {
+    console.log('mouted',this)
+  },
    setup() {
     const count = ref(1)
+    console.log(this)
     // ref定义一个函数，作用：响应式数据(基本类型数据)
     const state = {
       name: '小明',
@@ -47,7 +52,8 @@ export default defineComponent({
       form.age = 120
       form.gender = 'test'
       // delete state.sex
-      console.log(form)
+      console.log(form, state)
+
 
     }
 
@@ -59,21 +65,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
