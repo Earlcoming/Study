@@ -26,16 +26,15 @@ export default defineComponent({
   mounted() {
     // console.log("mouted", this);
   },
-  /**
-   * [setup description]
-   *
-   * @param   {[type]}  props    [props description]
-   * @param   {[type]}  context  [context description]
-   *
-   * @return  {[type]}           [return description]
-   */
-  setup(props, context) {
-    console.log("值", props, context, props.msg);
+
+  setup(props, { attrs, emit, slots }) {
+    /**
+     * props: 包含props配置声明且传入了的所有属性的对象，父组件传入的所有的值，函数等
+     * attrs: 包含没有在props配置中声明的属性的对象, 相当于 this.$attrs
+     * slots: 包含所有传入的插槽内容的对象, 相当于 this.$slots
+     * emit: 用来分发自定义事件的函数, 相当于 this.$emit
+     */
+    console.log("值", props, attrs, emit, slots);
 
     const count = ref(1);
     // ref定义一个函数，作用：响应式数据(基本类型数据)
