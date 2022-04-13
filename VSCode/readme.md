@@ -40,6 +40,12 @@
 
 > `VS DocBlockr` 输入`/**` 即可生成注释
 
-### vue 3 Snippets
+### vue3 插件
+
+#### vue 3 Snippets
 
 > `vue2/vue3`都可以使用的一款插件
+
+#### volar
+
+> `Vue Language Features (Volar)` `vue3`插件
