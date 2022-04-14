@@ -71,10 +71,7 @@ export default defineComponent({
      */
     const fullName2 = ref("");
     watchEffect(() => {
-      // fullName2.value = name.first + "_" + name.last;
-      const names = fullName1.value;
-      name.first = names[0];
-      name.last = names[1];
+      fullName2.value = name.first + "_" + name.last;
     });
 
     return {
