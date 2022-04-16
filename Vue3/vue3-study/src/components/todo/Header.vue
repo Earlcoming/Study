@@ -23,7 +23,7 @@ const addList = () => {
     name: keyword.value,
     isComputed: false,
   };
-  props.addTodo(todo);
+  props.(todo);
   keyword.value = "";
 };
 </script>
