@@ -6,7 +6,7 @@
  css: {
     loaderOptions: {
       sass: {
-        additionalData: 或 prependData:   // 8版本用prependData: 10+使用 additionalData
+        additionalData: 或 prependData:   // sass-loader 8版本用prependData: 10+使用 additionalData
         `
           @import "@/styles/variables.scss";  // scss文件地址
           @import "@/styles/mixin.scss";     // scss文件地址
