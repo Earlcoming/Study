@@ -1,4 +1,8 @@
 <template>
+  父级名字
+  <input type="text" v-model="formData.name" />
+
+  <Info v-model:name="formData.name" />
   <div class="container">
     <Header :addTodo="addTodo" />
     <Main :todos="todoList.todos" :deleteTodo="deleteTodo" :isFlag="isFlag" />
@@ -12,12 +16,18 @@
 
 <script lang="ts" setup>
 import { reactive, watch, onMounted } from 'vue'
+import Info from './components/Info.vue'
 import Header from './components/Header.vue'
 import Main from './components/Main.vue'
 import Footer from './components/Footer.vue'
 
 import Todo from '@/hooks/Todo'
 import { setStorage, getStorage } from '@/utils/localStorage'
+
+const formData = reactive({
+  name: '名字',
+  age: 12
+})
 
 const todoList = reactive<{ todos: Todo[] }>({
   todos: []
