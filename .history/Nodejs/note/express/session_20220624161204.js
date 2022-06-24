@@ -1,0 +1,11 @@
+const session = require('express-session')
+const express = require('express')
+const app = express()
+
+app.use(session({
+  secret: 'earl',
+  resave: false,
+  saveUninitialized: true
+}))
+
+api.listen(3)
