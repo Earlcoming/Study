@@ -1,0 +1,20 @@
+/*
+ $ @Author: 'Earl'
+ $ @Date: 2022-06-27 16:04:10
+ $ @LastEditors: 'Earl'
+ $ @LastEditTime: 2022-06-27 16:07:32
+ $ @FilePath: \daoqid:\Study\Nodejs\api_node\app.js
+ $ @Description: app接口注册
+ */
+const express = require("express");
+const parser = require('body-parser')
+const app = express();
+
+
+// 注册路由
+const userRouter = require("./router/user");
+app.use("/api", userRouter);
+
+app.listen(3000, () => {
+  console.log("node start http://localhost:3000");
+});

@@ -1,0 +1,1 @@
+const resSuccess = (req,res,)

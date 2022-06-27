@@ -1,0 +1,1 @@
+exports.regUser = (req, res) => 
