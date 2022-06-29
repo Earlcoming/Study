@@ -1,0 +1,3 @@
+exports.articleCates = (req, res) => {
+  
+}
