@@ -1,0 +1,36 @@
+<script setup lang="ts">
+// This starter template is using Vue 3 <script setup> SFCs
+// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import HelloWorld from './components/HelloWorld.vue'
+import {reactive, ref, Ref} from 'vue'
+
+const message:Ref<string | number> = ref("伯爵")
+const changeMsg = () => {
+  message.value = 111
+  console.log(message);
+}
+
+const {foo,bar} = reactive({
+  foo: 11,
+  bar: 000
+})
+
+</script>
+
+<template>
+  <!-- <img alt="Vue logo" src="./assets/logo.png" />
+  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
+  <button @click="changeMsg">修改文字</button>
+  {{message}}
+</template>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
