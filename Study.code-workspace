@@ -5,28 +5,23 @@
       "path": "D:\\Study"
     },
     {
-      "name": "docs-zh-cn-main",
-      "path": "D:\\Vue\\docs-zh-cn-main"
-    },
-    {
       "name": "vue3-shop-pnpm",
       "path": "D:\\Vue\\vue3-shop-pnpm"
     },
     {
-      "name": "js-demo",
-      "path": "D:\\js-demo"
+      "path": "..\\Work\\dev\\daoqi-vue3"
     },
     {
-      "name": "vue-shop",
-      "path": "D:\\Vue\\vue-shop"
+      "name": ".leetcode",
+      "path": "C:\\Users\\Dell\\.leetcode"
     }
   ],
   "settings": {
-    "liveServer.settings.multiRootWorkspaceName": "qdys",
+    "liveServer.settings.multiRootWorkspaceName": "test",
     "git.ignoreLimitWarning": true,
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
     "[vue]": {
-      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+      "editor.defaultFormatter": "Vue.volar"
     },
     "[scss]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -35,7 +30,7 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[html]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "vscode.html-language-features"
     },
     "[css]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
