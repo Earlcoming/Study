@@ -14,10 +14,13 @@
     {
       "name": ".leetcode",
       "path": "C:\\Users\\Dell\\.leetcode"
+    },
+    {
+      "path": "..\\Softwear\\倒计时\\dist"
     }
   ],
   "settings": {
-    "liveServer.settings.multiRootWorkspaceName": "test",
+    "liveServer.settings.multiRootWorkspaceName": "dist",
     "git.ignoreLimitWarning": true,
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
     "[vue]": {
@@ -30,9 +33,12 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[html]": {
-      "editor.defaultFormatter": "vscode.html-language-features"
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
   }

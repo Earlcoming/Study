@@ -21,13 +21,12 @@ setup(props, context){
   props:{
     msg: String
   }
-  
   // context
   /**
-   * 
-   * 
-   */ 
-  
+   *
+   *
+   */
+
   // ref响应式基本类型数据, count是一个rel对象
   // 操作数据xxx.value
   const count = ref(0)
@@ -44,7 +43,7 @@ setup(props, context){
     }
 
   })
-  
+
   handle() {
     console.log('handle')
   }

@@ -4,17 +4,16 @@ import { useStore } from '@/stores'
 import * as echarts from 'echarts'
 import './assets/china'
 const store = useStore();
-store.getList()
 
-onMounted(() => {
 
+onMounted(async () => {
+  await store.getList()
+  const city = store.list.diseaseh5Shelf.areaTree[0].children;
+  console.log(city, 'onmounted')
   const chart = echarts.init(document.querySelector('#map') as HTMLElement)
   const data = [
     {
       name: "内蒙古",
-      itemStyle: {
-        areaColor: "#56b1da",
-      },
       value: [110.3467, 41.4899]
     },
   ];
@@ -25,35 +24,36 @@ onMounted(() => {
       aspectScale: 0.8,
       layoutCenter: ["50%", "50%"],
       layoutSize: "120%",
-      itemStyle: {
-        normal: {
-          areaColor: {
-            type: "linear-gradient",
-            x: 0,
-            y: 1200,
-            x2: 1000,
-            y2: 0,
-            colorStops: [
-              {
-                offset: 0,
-                color: "#152E6E", // 0% 处的颜色
-              },
-              {
-                offset: 1,
-                color: "#0673AD", // 50% 处的颜色
-              },
-            ],
-            global: true, // 缺省为 false
-          },
-          shadowColor: "#0f5d9d",
-          shadowOffsetX: 0,
-          shadowOffsetY: 15,
-          opacity: 0.5,
-        },
-        emphasis: {
-          areaColor: "#0f5d9d",
-        },
+      emphasis: {
+        areaColor: "#0f5d9d",
+        // },
       },
+      itemStyle: {
+        // normal: {
+        areaColor: {
+          type: "linear-gradient",
+          x: 0,
+          y: 1200,
+          x2: 1000,
+          y2: 0,
+          colorStops: [
+            {
+              offset: 0,
+              color: "#152E6E", // 0% 处的颜色
+            },
+            {
+              offset: 1,
+              color: "#0673AD", // 50% 处的颜色
+            },
+          ],
+          global: true, // 缺省为 false
+        },
+        shadowColor: "#0f5d9d",
+        shadowOffsetX: 0,
+        shadowOffsetY: 15,
+        opacity: 0.5,
+      },
+
 
       regions: [
         {
@@ -61,13 +61,13 @@ onMounted(() => {
           itemStyle: {
             areaColor: "rgba(0, 10, 52, 1)",
             borderColor: "rgba(0, 10, 52, 1)",
-            normal: {
-              opacity: 0,
-              label: {
-                show: false,
-                color: "#009cc9",
-              },
+            // normal: {
+            opacity: 0,
+            label: {
+              show: false,
+              color: "#009cc9",
             },
+            // },
           },
           label: {
             show: false,
@@ -80,8 +80,8 @@ onMounted(() => {
     series: [
       {
         type: "map",
-        selectedMode: "multiple",
-        mapType: "china",
+        // selectedMode: "multiple",
+        map: "china",
         aspectScale: 0.8,
         layoutCenter: ["50%", "50%"], //地图位置
         layoutSize: "120%",
@@ -98,44 +98,50 @@ onMounted(() => {
           fontSize: 16,
         },
         itemStyle: {
-          normal: {
-            areaColor: "#0c3653",
-            borderColor: "#1cccff",
-            borderWidth: 1.8,
-          },
-          emphasis: {
-            areaColor: "#56b1da",
-            label: {
-              show: false,
-              color: "#fff",
-            },
+          // normal: {
+          areaColor: "#0c3653",
+          borderColor: "#1cccff",
+          borderWidth: 1.8,
+          // },
+
+        },
+        emphasis: {
+          areaColor: "#56b1da",
+          label: {
+            show: true,
+            color: "#fff",
           },
         },
         data: data,
       },
       {
-        name: 'Top 5',
+        // name: 'Top 5',
         type: 'scatter',
         coordinateSystem: 'geo',
         //   symbol: 'image://http://ssq168.shupf.cn/data/biaoji.png',
         // symbolSize: [30,120],
         // symbolOffset:[0, '-40%'] ,
+        symbol: 'pin',
+        symbolSize: [45, 45],
         label: {
-          normal: {
-            show: false,
-          }
+          // normal: {
+          show: false,
+          // }
         },
         itemStyle: {
-          normal: {
-            color: '#D8BC37', //标志颜色
-          }
+          // normal: {
+          color: '#D8BC37', //标志颜色
+          // }
         },
         data: data,
         showEffectOn: 'render',
         rippleEffect: {
           brushType: 'stroke'
         },
-        hoverAnimation: true,
+        emphasis: {
+          scale: true
+        },
+        // hoverAnimation: true,
         zlevel: 1
       },
     ],
@@ -175,6 +181,10 @@ onMounted(() => {
 
   &-right {
     width: 400px;
+  }
+
+  #map {
+    height: 80vh;
   }
 }
 </style>
