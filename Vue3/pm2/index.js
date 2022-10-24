@@ -11,7 +11,6 @@ router.get("/index", (req, res) => {
     list: os.cpus(),
   });
 });
-
 app.use(router);
 
 app.listen(3333, () => {

@@ -1,46 +1,104 @@
-## 安装
+## 创建nest
 
-```bash
-$ npm i -g @nestjs/cli  //全局安装nestjs脚手架
-$ nest new project-name  //创建项目
+`npm i -g @nestjs/cli` 创建cli
+`nest new project-name` cli创建项目
+
+## nest/cli 常用命令
+
+`nest g co user` 生成controller.ts
+`nest g mo user` 生成module.ts
+`nest g s user` 生成service.ts
+`nest g resource user` 生成user文件夹
+
+## RESTful 风格设计
+
+### 1.接口url
+
+
+
+传统接口
+
+```html
+http://localhost:8080/api/get_list?id=1
+
+http://localhost:8080/api/delete_list?id=1
+
+http://localhost:8080/api/update_list?id=1
+
 ```
 
-## Running the app
+RESTful接口
 
-```bash
-# development
-$ npm run start
+http://localhost:8080/api/get_list/1 查询 删除 更新
 
-# watch mode
-$ npm run start:dev
+RESTful 风格一个接口就会完成 增删改差 他是通过不同的请求方式来区分的
 
-# production mode
-$ npm run start:prod
+查询GET
+
+提交POST
+
+更新 PUT PATCH
+
+删除 DELETE
+
+
+
+### 2,版本控制
+
+main.ts
+
+```ts
+
+import { NestFactory } from '@nestjs/core';
+import { VersioningType } from '@nestjs/common';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.enableVersioning({
+    type: VersioningType.URI,
+  })
+  await app.listen(3000);
+}
+bootstrap();
+
 ```
 
-## Test
 
-```bash
-# unit tests
-$ npm run test
+然后在user.controller 配置版本
 
-# e2e tests
-$ npm run test:e2e
+```ts
+import { Controller, Get, Post, Body, Patch, Param, Delete, Version } from '@nestjs/common';
+import { UserService } from './user.service';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 
-# test coverage
-$ npm run test:cov
+@Controller({
+  path:"user",
+  version:'1'
+})
+export class UserController {
+  constructor(private readonly userService: UserService) {}
+
+  @Post()
+  create(@Body() createUserDto: CreateUserDto) {
+    return this.userService.create(createUserDto);
+  }
+
+  @Get()
+  // @Version('1')
+  findAll() {
+    return this.userService.findAll();
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.userService.findOne(+id);
+  }
+
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+    return this.userService.update(+id, updateUserDto);
+  }
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).

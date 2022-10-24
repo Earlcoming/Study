@@ -2,25 +2,11 @@
   "folders": [
     {
       "name": "Study",
-      "path": "D:\\Study"
-    },
-    {
-      "name": "vue3-shop-pnpm",
-      "path": "D:\\Vue\\vue3-shop-pnpm"
-    },
-    {
-      "path": "..\\Work\\dev\\daoqi-vue3"
-    },
-    {
-      "name": ".leetcode",
-      "path": "C:\\Users\\Dell\\.leetcode"
-    },
-    {
-      "path": "..\\Softwear\\倒计时\\dist"
+      "path": "."
     }
   ],
   "settings": {
-    "liveServer.settings.multiRootWorkspaceName": "dist",
+    "liveServer.settings.multiRootWorkspaceName": "odsl",
     "git.ignoreLimitWarning": true,
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
     "[vue]": {
@@ -33,7 +19,7 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[html]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "vscode.html-language-features"
     },
     "[css]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
