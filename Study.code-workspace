@@ -3,10 +3,16 @@
     {
       "name": "Study",
       "path": "."
+    },
+    {
+      "path": "../Work/dev/uView_default"
+    },
+    {
+      "path": "../Vue/笑话"
     }
   ],
   "settings": {
-    "liveServer.settings.multiRootWorkspaceName": "odsl",
+    "liveServer.settings.multiRootWorkspaceName": "sd_new",
     "git.ignoreLimitWarning": true,
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
     "[vue]": {

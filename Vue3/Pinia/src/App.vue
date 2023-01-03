@@ -17,6 +17,9 @@ const reset = () => {
   text.$reset()
 }
 
+const nameChage = () => {
+  text.name = 'aaaa'
+}
 
 function isPalindrome(x: number): boolean {
   const n = parseInt(x.toString().split('').reverse().join(''));
@@ -79,6 +82,7 @@ function romanToInt(s: string): number {
 
   <button @click="change">change</button>
   <button @click="reset">reset</button>
+  <button @click="nameChage">{{ text.name }}</button>
 </template>
 
 <style>
