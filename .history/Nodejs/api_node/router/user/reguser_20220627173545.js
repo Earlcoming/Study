@@ -1,2 +1,0 @@
-const reguser
-module.exports = 

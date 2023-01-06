@@ -1,6 +1,0 @@
-// 
-exports.regUser = (req, res) => {
-
-}
-
-

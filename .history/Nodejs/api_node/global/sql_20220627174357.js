@@ -1,1 +1,0 @@
-module.exports.checkUserInfo = 'select * from ev_users'

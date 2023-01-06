@@ -1,3 +1,0 @@
-const success = (err, res) => {
-
-}

@@ -1,1 +1,0 @@
-export.regUser = (req, res) => 

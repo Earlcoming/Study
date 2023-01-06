@@ -1,6 +1,0 @@
-
-
-const piniaPlugin = (options: Options) => { 
-
-
-}
