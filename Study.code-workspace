@@ -9,10 +9,13 @@
     },
     {
       "path": "../Vue/笑话"
+    },
+    {
+      "path": "../Vue/tool"
     }
   ],
   "settings": {
-    "liveServer.settings.multiRootWorkspaceName": "sd_new",
+    "liveServer.settings.multiRootWorkspaceName": "smdb",
     "git.ignoreLimitWarning": true,
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
     "[vue]": {

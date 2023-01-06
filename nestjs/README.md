@@ -3,12 +3,14 @@
 `npm i -g @nestjs/cli` 创建cli
 `nest new project-name` cli创建项目
 
-## nest/cli 常用命令
+## 查询nest所有命令
+`nest --help`
 
+## nest/cli 常用命令
 `nest g co user` 生成controller.ts
 `nest g mo user` 生成module.ts
 `nest g s user` 生成service.ts
-`nest g resource user` 生成user文件夹
+`nest g resource user` 生成user文件夹包含controller,module,service三个文件
 
 ## RESTful 风格设计
 

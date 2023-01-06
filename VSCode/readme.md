@@ -49,3 +49,9 @@
 #### volar
 
 > `Vue Language Features (Volar)` `vue3`插件
+
+
+#### 删除多余空行
+
+> ^\s*(?=\r?$)\n
+ctrl+f 点击后面* 再点击替换即可
