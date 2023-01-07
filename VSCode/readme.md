@@ -32,9 +32,10 @@
 > `One Dark Pro`
 
 ### settings sync
-
+> 已经被弃用
 1. `Upload Key : Shift + Alt + U`
 2. `Download Key : Shift + Alt + D`
+
 
 ### js 注释插件
 
