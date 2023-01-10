@@ -103,3 +103,56 @@ export class UserController {
   }
 ```
 
+
+## 版本控制
+
+main.ts
+
+```ts
+import { NestFactory } from '@nestjs/core';
+import { VersioningType } from '@nestjs/common';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  //版本控制
+  app.enableVersioning({
+    type: VersioningType.URI,
+  });
+  await app.listen(3000);
+}
+bootstrap();
+```
+
+
+user.controller
+
+```ts
+@Controller({
+  path: 'user',
+  version: '1'
+})
+
+// 或者
+
+  @Get()
+  // 单个版本控制
+  @Version('1')
+  findAll() {
+    return this.userService.findAll();
+  }
+```
+
+
+
+## express-session
+
+`npm i express-session --save`
+`npm i @types/express-session -D`
+`import * as session from 'express-session'`
+`app.use(session())`
+
+## 安装验证码图片
+
+`npm install svg-captcha -S`
+
