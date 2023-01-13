@@ -1,7 +1,7 @@
 ## 安装
 
 ```
-  npm init vite@latest
+  npm init vite@latest project-name
 
   yarn create vite
 
