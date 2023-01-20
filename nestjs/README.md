@@ -6,4 +6,4 @@ node 包管理工具
 
 `npm i -g nrm` 安装nrm
 
-`nrm ls`
+`nrm ls` 查看官方镜像源
