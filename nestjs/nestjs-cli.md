@@ -5,3 +5,5 @@
 `nest n project-name` 创建项目
 
 `nest -h` 查看`nestjs`命令-v
+
+`nest ` 
