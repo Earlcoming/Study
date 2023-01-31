@@ -15,3 +15,4 @@
 `nvm alias v16 v16.16.0` 设置v16默认为v.16.16.0版本
 
 `nvm use v16` 等于 `nvm use v16.16.0`
+
